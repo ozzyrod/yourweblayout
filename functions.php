@@ -37,7 +37,7 @@ function yourweblayout_setup() {
 		'primary' => __( 'Primary Menu', 'yourweblayout' ),
 		'secondary' => __( 'Secondary Menu', 'yourweblayout' ),
 	) );
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -97,9 +97,9 @@ function yourweblayout_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css' );
 	wp_enqueue_style( 'yourweblayout-style', get_stylesheet_uri() );
-	
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . 'js/jquery-1.11.1.js'  );
-	wp_enqueue_script( 'bootstrap-javascript', get_template_directory_uri() . '/js/bootstrap.js' );
+
+	wp_enqueue_script( 'bootstrap-javascript', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '1.1.1', true );
+	wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/js/theme.js', array( 'bootstrap-javascript' ), '1.1.1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -126,7 +126,7 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
 /**
- * Filter to apply modal attributes to nav link 
+ * Filter to apply modal attributes to nav link
  */
 add_filter( 'nav_menu_link_attributes', 'boot_nav_modal', 10, 3 );
 function boot_nav_modal( $atts, $item, $args )
@@ -210,10 +210,10 @@ function display_projects_custom_fields() {
 add_action( 'projects_after_loop_item', 'display_projects_custom_fields', 20 );
 
 //clean up ACF
-function wpex_clean_shortcodes($content){   
+function wpex_clean_shortcodes($content){
     $array = array (
-        '<p>[' => '[', 
-        ']</p>' => ']', 
+        '<p>[' => '[',
+        ']</p>' => ']',
         ']<br />' => ']'
     );
     $content = strtr($content, $array);
