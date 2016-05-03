@@ -1,0 +1,756 @@
+/*
+Theme Name: Your Web Layout
+Theme URI: http://yourweblayout.com/
+Author: Design Services
+Author URI: http://yourweblayout.com/
+Description: This site was built by Design Services. If you have any questions, please contact <a href="mailto:updates@yourweblayout.com">updates@yourweblayout.com</a>
+Version: 1.1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: responsive-layout
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Your Web Layout is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Bootstrap
+	1.1 Adjustments
+
+2.0	Underscores
+	2.1 Elements
+	2.2 Accessibility
+	2.3 Alignments
+	2.4 Clearings
+
+3.0 Your Web Layout
+	3.1 Typography
+	3.2 Background
+	3.3 Header
+	3.4 Navigation
+	3.5 Content
+	3.6 Sidebar
+	3.7 Footer
+	3.8 Custom
+
+4.0 Media Queries
+	4.1 xs
+	4.2 sm
+	4.3 md
+	4.4 lg
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Bootstrap
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.1 Adjustments
+--------------------------------------------------------------*/
+/* If they insist, disable responsiveness thusly
+ * @link http://getbootstrap.com/getting-started/#disable-responsive
+ *
+ * 1. Replace all col classes (col-lg, col-md, col-sm) with col-xs
+ * 2. Remove all navbar collapsing and expanding behavior
+ * 3. Uncomment css below to override container width
+ */
+
+/*
+.container {
+	width: 970px !important;
+}
+@media (min-width: 768px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 970px;
+	}
+}
+*/
+
+/*--------------------------------------------------------------
+2.0	Underscores
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+2.1 Elements
+--------------------------------------------------------------*/
+img {
+	height: auto; /* Make sure images are scaled correctly */
+	max-width: 100%; /* Adhere to container width */
+}
+/* Make sure elements fit their containers */
+embed, iframe, object, .wp-caption, .widget select {
+	max-width: 100%;
+}
+/* Required by WordPress theme check */
+.sticky, .bypostauthor, .gallery-caption, .wp-caption-text {
+}
+/*--------------------------------------------------------------
+2.2 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+/*--------------------------------------------------------------
+2.3 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+/*--------------------------------------------------------------
+2.4 Clearings
+--------------------------------------------------------------*/
+.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after {
+	content: '';
+	display: table;
+}
+.clear:after, .entry-content:after, .comment-content:after, .site-header:after, .site-content:after, .site-footer:after {
+	clear: both;
+}
+/*--------------------------------------------------------------
+3.0 Your Web Layout
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+3.1 Typography
+--------------------------------------------------------------*/
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+}
+p {
+}
+/*--------------------------------------------------------------
+3.2 Background
+--------------------------------------------------------------*/
+body {
+	background: #fff;
+}
+.site-header {
+	background: #f8f8f8;
+}
+#site-navigation {
+	background: #f0f0f0;
+}
+.site-content > .container {
+	background: #e8e8e8;
+}
+.site-footer {
+	background: #e0e0e0;
+}
+/*--------------------------------------------------------------
+3.3 Header
+--------------------------------------------------------------*/
+#logo {
+	margin-bottom: 10px;
+}
+/*Fixed header customizations*/
+.page-id-110 #masthead {
+	top: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	z-index: 1030;
+	margin-bottom: 20px;
+	min-height: 50px;
+	background-color: #000;
+}
+.page-id-110 #logo img {
+	display: none;
+}
+.page-id-110 #logo:before {
+	color: #fff;
+	content: "\f087";
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	font-size: 40px;
+}
+.page-id-110 #logo:after {
+	color: #fff;
+	content: "Your logo here";
+	font-weight: bold;
+	font-size: 24px;
+	padding-left: 10px;
+}
+.page-id-110 {
+	padding-top: 117px;
+}
+.page-id-110 #site-navigation {
+	background-color: transparent;
+}
+.page-id-110 .navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+/*end fixed header customizations*/
+
+/*--------------------------------------------------------------
+3.4 Navigation
+--------------------------------------------------------------*/
+/* Primary nav */
+.navbar {
+	border: none;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+.navbar-default {
+	margin-bottom: 0;
+}
+.navbar-default .navbar-nav {
+	margin-left: -15px;
+}
+.navbar-nav > li {
+	float: none;
+}
+.nav-justified > li {
+	vertical-align: middle;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #333;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	background: #555;
+	color: #eee;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	background: #777;
+	color: #fff;
+}
+/* Secondary nav */
+.nav > li > a {
+	color: #333;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+	background: #555;
+	color: #eee;
+}
+.nav > li.active > a, .nav > li.active > a:hover, .nav > li.active > a:focus {
+	background: #777;
+	color: #fff;
+}
+/*--------------------------------------------------------------
+3.5 Content
+--------------------------------------------------------------*/
+.entry-header {
+}
+.entry-content {
+}
+.entry-footer {
+}
+/*--------------------------------------------------------------
+3.6 Sidebar
+--------------------------------------------------------------*/
+.widget-area {
+}
+.widget-title {
+}
+/*--------------------------------------------------------------
+3.7 Footer
+--------------------------------------------------------------*/
+.attribution {
+}
+/*--------------------------------------------------------------
+3.8 Custom
+--------------------------------------------------------------*/
+
+.modal-content {
+	background-color: #ebebeb;
+}
+#field_1_8 {
+}
+#field_1_8 .ginput_container {
+	background-image: url(/demo/wp-content/uploads/2014/11/t1.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 0 0;
+	position: relative;
+	height: 0;
+	padding-top: 95.238095238095%;
+	position: relative;
+}
+#input_1_8 {
+	position: absolute;
+	bottom: 9%;
+	left: 44%;
+	width: 15%;
+}
+#primary .w20 {
+	width: 20%;
+}
+.popover {
+	width: 100%;
+}
+.popover-row, .collapse-row {
+	margin: 30px 0 40px 0;
+}
+.collapse-img {
+	height: 250px;
+}
+/*Full width slideshow with caption background customizations*/
+#metaslider_184 .nivo-caption, #metaslider_184 .caption-wrap {
+	background: none;
+	opacity: 1;
+	padding: 0;
+	bottom: 20%;
+}
+#metaslider_184 .caption {
+	padding: 0;
+	font-family: 'BenchNine', sans-serif;
+}
+#metaslider_184 h2 {
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+}
+#metaslider_184 h2.white {
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(255, 255, 255);
+	/* RGBa with 0.6 opacity */
+	background: rgba(255, 255, 255, 0.6);
+	color: #003663;
+	margin: 0 0 0 4em;
+	padding-left: 10px;
+}
+#metaslider_184 h2.blue {
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0, 54, 99);
+	/* RGBa with 0.6 opacity */
+	background: rgba(0, 54, 99, 0.6);
+	color: #d9e5ee;
+	margin: 0;
+	width: 21em;
+	text-align: right;
+	padding-right: 10px;
+}
+/*end full width slideshow caption background customizations */
+
+.page-id-190 #logo {
+	width: 50%;
+}
+.page-id-190 #site-navigation {
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(255, 255, 255);
+	/* RGBa with 0.6 opacity */
+	background: rgba(255, 255, 255, 0.6);
+}
+/*Customizations for vertical tabs example http://rwd.yourweblayout.com/demo/vertical-tabs - adjust ids and classes as needed*/
+
+.page-id-207 #custom-tabs-0 li {
+	background-color: #86bc66;
+}
+.page-id-207 #custom-tabs-0 li.active {
+	background-color: #2f7f40;
+}
+.page-id-207 #custom-tabs-0 li.active a {
+	background-color: transparent;
+}
+.page-id-207 #custom-tabs-0 li a:hover, #custom-tabs-0 li a:focus {
+	background-color: transparent;
+}
+#post-207 .tab-content {
+	float: left;
+	width: 66.6667%;
+	padding-right: 15px;
+}
+/*removing #content .container bg color*/
+.page-id-207 #content .container {
+	background-color: transparent;
+}
+/*end customizations for vertical tabs example*/
+
+
+/*customizations for carousel slider with captions above image http://rwd.yourweblayout.com/demo/carousel-slider-2*/
+.page-id-232 .metaslider .caption-wrap {
+	top: 0;
+	bottom: auto;
+	background-color: #F37F32;
+	opacity: 1;
+}
+/*end carousel captions on top customizations*/
+
+
+/*customizations for vertical tabbed speech bubbles http://rwd.yourweblayout.com/demo/speech-bubbles*/
+.page-id-236 #custom-tabs-0 li {
+	background-color: transparent;
+}
+.page-id-236 #custom-tabs-0 li.active {
+	background-color: #F37F32;
+}
+.page-id-236 #custom-tabs-0 li.active a, .page-id-236 #custom-tabs-0 li.active a:hover, .page-id-236 #custom-tabs-0 li.active a:focus {
+	background-color: transparent;
+	color: #fff;
+}
+#post-236 .tab-content {
+	float: left;
+	width: 66.6667%;
+	padding-right: 15px;
+}
+.page-id-236 #custom-tabs-0 li > a:hover, .page-id-236 #custom-tabs-0 li > a:focus {
+	background-color: transparent;
+	color: #f37f32;
+}
+/*removing #content .container bg color*/
+.page-id-236 #content .container {
+	background-color: transparent;
+}
+.page-id-236 .orange {
+	background-color: #f37f32;
+	border: 2px solid #fff;
+	border-radius: 10px;
+	position: relative;
+	padding:15px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+	margin-top:15px;
+}
+
+.page-id-236 .grey {
+	background-color: #B2B2B2;
+	border: 2px solid #fff;
+	border-radius: 10px;
+	position: relative;
+	padding:15px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+}
+.page-id-236 .grey:before {
+	content: "";
+	position: absolute;
+	right: 100%;
+	top: 20px;
+	width: 0;
+	height: 0;
+	border-top: 13px solid transparent;
+	border-right: 13px solid #B2B2B2;
+	border-bottom: 13px solid transparent;
+}
+/*end customizations for vertical speech bubbles*/
+
+
+/*hiding the navigation on pages*/
+.page-id-207 #site-navigation, .page-id-207 #footer-navigation, .page-id-232 #site-navigation, .page-id-232 #footer-navigation {
+	display: none;
+}
+
+/* Featured image as leaderboard*/
+
+.leaderboard-image, .leaderboard-without-image {
+	border: 5px solid #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 60px;
+    margin-top: 15px;
+}
+
+.leaderboard-without-image {
+	background: url(images/default-leaderboard.jpg) center top no-repeat;
+	height:350px;
+}
+/**/
+
+/*Text overlay on full width video*/
+
+.video-text-wrap {
+	position:relative;
+}
+
+.video-text {
+	position:absolute;
+	top:7%;
+	left:5%;
+	z-index:1;
+	color:#fff;
+}
+
+.page-id-291 .fve-video-wrapper {
+	opacity:0.9;
+}
+
+.page-id-291 .entry-title {
+	display:none;
+}
+
+.page-id-291 .site-content > .container {
+	background: none;
+}
+
+.page-id-291 #masthead, .page-id-291 footer {
+	display:none;
+}
+
+body.page-id-291 {
+	background-color:#262626;
+	color:#fff;
+}
+
+.page-id-291 article {
+	margin-top:20px;
+}
+
+/**/
+
+/*Category images with subcategory images in modal */
+@media (min-width: 768px) {
+	.cat-thumbs .modal-dialog {
+		width: 750px;
+	}
+}
+
+.cat-thumbs .category-1-thumb {
+	background: url(http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg) no-repeat;
+	border-radius: 50%;
+	color: #ffffff;
+	display: block;
+	font-size: 30px;
+	font-weight: 600;
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+	width: 200px;
+}
+.cat-thumbs .modal-body img {
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+}
+
+/*Making NextGen prettier*/
+.entry-content .ngg-gallery-thumbnail img {
+	padding: 0;
+}
+
+/*--------------------------
+Projects by WooThemes
+--------------------------*/
+.single-project-categories {
+	padding-left: 0;
+}
+
+/*--------------------------
+Fixed vertical nav
+--------------------------*/
+.menu-vertical-fixed-container .menu {
+	list-style: none;
+	padding-left: 25px;
+}
+@media (min-width: 992px) {
+	.page-id-634 {
+		padding-top: 162px;
+	}
+	.page-id-634 .site-header {
+		left: 0;
+    		position: fixed;
+    		right: 0;
+    		top: 0;
+    		z-index: 1030;
+	}
+	.page-id-634 .site-content > .container {
+		padding-right: 95px;
+	}
+	.menu-vertical-fixed-container {
+		margin-top: 20px;
+		position: fixed;
+		right: 20px;
+		z-index: 99;
+	}
+	.menu-vertical-fixed-container .menu-item {
+		margin-bottom: 15px;
+	}
+	.menu-vertical-fixed-container .menu-item a {
+		background-color: #428bca;
+		border-radius: 50%;
+		display: block;
+		height: 10px;
+		width: 10px;
+		transition: background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+	}
+	.menu-vertical-fixed-container .menu-item a:hover {
+		background-color: transparent;
+		border: 1px solid  #428bca;
+	}
+	.menu-vertical-fixed-container .nav-title {
+		margin-top: -5px;
+		padding: 0 5px 5px 0;
+		position: absolute;
+		right: 10px;
+		text-decoration: none;
+		visibility: hidden;
+		white-space: nowrap;
+	}
+	.menu-vertical-fixed-container .menu-item:hover .nav-title {
+		visibility: visible;
+	}
+}
+@media (min-width: 1250px) {
+	.page-id-634 .site-content > .container {
+		padding-right: 45px;
+	}
+}
+@media (min-width: 1380px) {
+	.page-id-634 .site-content > .container {
+		padding-right: 15px;
+	}
+}
+/*--------------------------
+All in on events calendar
+--------------------------*/
+.ai1ec-month-view .ai1ec-day-stretcher {
+	height: 34px;
+}
+.timely .ai1ec-prev-year,
+.timely .ai1ec-next-year {
+    display: none;
+}
+
+/*--------------------------------------------------------------
+4.0 Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+4.1 xs
+--------------------------------------------------------------*/
+/* Extra Small - phones */
+
+
+
+
+/*--------------------------------------------------------------
+4.2 sm
+--------------------------------------------------------------*/
+@media (min-width: 768px) {
+/* Small - tablets */
+#field_1_8 .ginput_container {
+	padding-top: 47%;
+}
+#input_1_8 {
+	position: absolute;
+	bottom: 8%;
+	left: 20%;
+	width: 10%;
+}
+/*Slideshow adjustments for small width */
+#metaslider_184 h2 {
+	font-size: 20px;
+	line-height: 28px;
+}
+#metaslider_184 {
+	z-index: 20;
+}
+#over-nav {
+	position: absolute;
+	width: 100%;
+}
+.page-id-190 #site-navigation {
+	position: relative;
+	z-index: 30;
+}
+}
+
+/*--------------------------------------------------------------
+4.3 md
+--------------------------------------------------------------*/
+@media (min-width: 992px) {
+/* Medium - desktops */
+	
+	/* Sticky footer
+	 * @link http://mystrd.at/modern-clean-css-sticky-footer/
+	 */
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	margin: 0 0 200px; /* = .site-footer height */
+}
+.site-footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 200px; /* = body margin-bottom */
+}
+/* Slideshow adjustments for medium width and larger */
+#metaslider_184 .nivo-caption, #metaslider_184 .caption-wrap {
+	bottom: 24%;
+}
+#metaslider_184 h2 {
+	font-size: 35px;
+	line-height: 44px;
+	font-weight: 400;
+}
+#metaslider_184 h2.white {
+	margin-left: 6em;
+}
+#metaslider_184 h2.blue {
+	width: 19.25em;
+}
+}
+
+/*--------------------------------------------------------------
+4.4 lg
+--------------------------------------------------------------*/
+@media (min-width: 1200px) {
+/* Large - desktops */
+
+
+
+}
