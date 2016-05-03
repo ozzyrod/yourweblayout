@@ -623,7 +623,8 @@ Fixed vertical nav
 		width: 10px;
 		transition: background-color 0.1s linear 0s, border-color 0.1s linear 0s;
 	}
-	.menu-vertical-fixed-container .menu-item a:hover {
+	.menu-vertical-fixed-container .menu-item a:hover,
+	.menu-vertical-fixed-container .menu-item.active a {
 		background-color: transparent;
 		border: 1px solid  #428bca;
 	}
@@ -636,7 +637,8 @@ Fixed vertical nav
 		visibility: hidden;
 		white-space: nowrap;
 	}
-	.menu-vertical-fixed-container .menu-item:hover .nav-title {
+	.menu-vertical-fixed-container .menu-item:hover .nav-title,
+	.menu-vertical-fixed-container .menu-item.active .nav-title {
 		visibility: visible;
 	}
 }
@@ -710,7 +712,7 @@ All in on events calendar
 --------------------------------------------------------------*/
 @media (min-width: 992px) {
 /* Medium - desktops */
-	
+
 	/* Sticky footer
 	 * @link http://mystrd.at/modern-clean-css-sticky-footer/
 	 */
